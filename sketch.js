@@ -37,7 +37,7 @@ function preload(){
 
 function setup() {
   createCanvas(400, 200);
-  canvas = createCanvas(displayWidth-20,displayHeight-80);
+  canvas = createCanvas(displayWidth-20,displayHeight-100);
   
   trex = createSprite(50,180,20,50);
   
@@ -98,6 +98,8 @@ function draw() {
     if(obstaclesGroup.isTouching(trex)){
         gameState = END;
     }
+    camera.position.x = trex.x+600;
+    console.log(trex.x);
   }
   else if (gameState === END) {
     gameOver.visible = true;
